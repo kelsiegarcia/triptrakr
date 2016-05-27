@@ -1,2 +1,14 @@
 <h1>Trips</h1>
 <p>Find me in app/views/trips/index.html.erb</p>
+
+<% if @trips.any? %>
+  <ul>
+    <% @trips.each do |trip| %>
+      <li>
+        <%= link_to trip.title, trip_locations_path(trip) %>
+      </li>
+    <% end %>
+  </ul>
+<% else %>
+  <h4>You don't have any trips planned yet!</h4>
+<% end %>
