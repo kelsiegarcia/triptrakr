@@ -36,13 +36,13 @@ class LocationsController < ApplicationController
 
   def destroy
     Location.find(params[:id]).destroy
-    redirect_to location_path
+    redirect_to trip_locations_path(@trip.id)
   end
 
   private
 
     def location_params
-      params.require(:location).permit(:name, :description, :completed)
+      params.require(:location).permit(:name, :description, :activity)
     end
 
     def find_trip
