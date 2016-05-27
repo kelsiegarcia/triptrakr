@@ -36,7 +36,7 @@ class LocationsController < ApplicationController
 
   def destroy
     Location.find(params[:id]).destroy
-    redirect_to location_path
+    redirect_to trip_locations_path(@trip.id)
   end
 
   private
