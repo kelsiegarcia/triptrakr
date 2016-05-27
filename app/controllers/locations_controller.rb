@@ -42,7 +42,7 @@ class LocationsController < ApplicationController
   private
 
     def location_params
-      params.require(:location).permit(:name, :description, :completed)
+      params.require(:location).permit(:name, :description, :activity)
     end
 
     def find_trip
